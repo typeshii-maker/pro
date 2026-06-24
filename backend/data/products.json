@@ -1,0 +1,134 @@
+[
+  {
+    "id": "m01",
+    "name": "Vintage Denim Jacket",
+    "category": "men",
+    "price": 1800,
+    "originalPrice": 6500,
+    "condition": "Excellent",
+    "size": "M / L",
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=600&auto=format&fit=crop",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "m02",
+    "name": "Plaid Wool Overcoat",
+    "category": "men",
+    "price": 2400,
+    "originalPrice": 9000,
+    "condition": "Like New",
+    "size": "L",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=600&auto=format&fit=crop",
+    "tag": "Rare Find"
+  },
+  {
+    "id": "m03",
+    "name": "Striped Cotton Shirt",
+    "category": "men",
+    "price": 900,
+    "originalPrice": 3200,
+    "condition": "Good",
+    "size": "S / M",
+    "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600&auto=format&fit=crop",
+    "tag": null
+  },
+  {
+    "id": "m04",
+    "name": "Leather Biker Boots",
+    "category": "men",
+    "price": 2100,
+    "originalPrice": 8000,
+    "condition": "Excellent",
+    "size": "42",
+    "image": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=600&auto=format&fit=crop",
+    "tag": "Trending"
+  },
+  {
+    "id": "w01",
+    "name": "Floral Wrap Midi Dress",
+    "category": "women",
+    "price": 1500,
+    "originalPrice": 5500,
+    "condition": "Like New",
+    "size": "M",
+    "image": "https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=600&auto=format&fit=crop",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "w02",
+    "name": "Tailored Beige Blazer",
+    "category": "women",
+    "price": 1700,
+    "originalPrice": 6000,
+    "condition": "Excellent",
+    "size": "S / M",
+    "image": "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?q=80&w=600&auto=format&fit=crop",
+    "tag": "Rare Find"
+  },
+  {
+    "id": "w03",
+    "name": "Vintage Silk Scarf Blouse",
+    "category": "women",
+    "price": 1100,
+    "originalPrice": 3800,
+    "condition": "Good",
+    "size": "S",
+    "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=600&auto=format&fit=crop",
+    "tag": null
+  },
+  {
+    "id": "w04",
+    "name": "Suede Ankle Boots",
+    "category": "women",
+    "price": 1950,
+    "originalPrice": 7200,
+    "condition": "Excellent",
+    "size": "38",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop",
+    "tag": "Trending"
+  },
+  {
+    "id": "k01",
+    "name": "Denim Overalls Set",
+    "category": "kids",
+    "price": 700,
+    "originalPrice": 2500,
+    "condition": "Excellent",
+    "size": "4-5yrs",
+    "image": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=600&auto=format&fit=crop",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "k02",
+    "name": "Hooded Fleece Jacket",
+    "category": "kids",
+    "price": 600,
+    "originalPrice": 2200,
+    "condition": "Good",
+    "size": "6-7yrs",
+    "image": "frontend/Assets/hoodie.jpg",
+    "tag": null
+  },
+  {
+    "id": "k03",
+    "name": "Striped Cotton Romper",
+    "category": "kids",
+    "price": 450,
+    "originalPrice": 1600,
+    "condition": "Like New",
+    "size": "1-2yrs",
+    "image": "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=600&auto=format&fit=crop",
+    "tag": "Rare Find"
+  },
+  {
+    "id": "k04",
+    "name": "Canvas Velcro Sneakers",
+    "category": "kids",
+    "price": 550,
+    "originalPrice": 1900,
+    "condition": "Excellent",
+    "size": "28 EU",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=600&auto=format&fit=crop",
+    "tag": "Trending"
+  }
+]

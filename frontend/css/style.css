@@ -1,0 +1,499 @@
+/* =========================================================
+   THRIFTER — design tokens
+   Palette stays within the brief's beige/black family:
+   warm near-black, charcoal, three beige tones, one tan-brown
+   accent (a deep beige) used for price tags & stamps.
+   ========================================================= */
+:root {
+  --ink: #16140f;          /* near-black, warm not cold */
+  --charcoal: #2b271f;
+  --beige: #ece1c8;        /* main background */
+  --beige-deep: #ddccA4;   /* section background */
+  --cream: #f8f3e7;        /* card surface */
+  --tan: #a87b46;          /* price-tag / accent (deep beige-brown) */
+  --tan-dark: #7c5a32;
+  --line: rgba(22, 20, 15, 0.14);
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Work Sans", "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--beige);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+a { color: inherit; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tan-dark);
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+.tf-navbar {
+  background: var(--ink);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.tf-navbar .navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  color: var(--beige);
+  font-weight: 600;
+}
+.tf-navbar .navbar-brand span { color: var(--tan); }
+.tf-navbar .nav-link {
+  color: rgba(236, 225, 200, 0.85) !important;
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin: 0 0.45rem;
+}
+.tf-navbar .nav-link:hover,
+.tf-navbar .nav-link.active { color: var(--beige) !important; }
+.tf-navbar .nav-link.active { border-bottom: 2px solid var(--tan); }
+
+.icon-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(236, 225, 200, 0.3);
+  color: var(--beige);
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.icon-btn:hover { background: var(--tan); border-color: var(--tan); color: var(--ink); }
+.icon-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--tan);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   HERO — blurred fashion background, stamped slogan
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1800&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center 30%;
+  filter: blur(3px) saturate(0.9);
+  transform: scale(1.06);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22,20,15,0.78) 0%, rgba(22,20,15,0.62) 45%, rgba(236,225,200,0.96) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--beige);
+  padding: 2rem 0;
+}
+.hero-stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--tan);
+  padding: 0.4rem 0.9rem;
+  transform: rotate(-2.5deg);
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+}
+.hero-content h1 {
+  font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+  line-height: 1.04;
+  font-weight: 600;
+  max-width: 11ch;
+}
+.hero-content .slogan {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+  max-width: 32ch;
+  margin: 1.1rem 0 1.9rem;
+  color: rgba(236, 225, 200, 0.92);
+}
+.btn-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  background: var(--tan);
+  color: var(--ink);
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-tag::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translateY(-50%);
+}
+.btn-tag { padding-left: 2.1rem; }
+.btn-tag:hover { transform: translateY(-2px); background: var(--beige); }
+.btn-ghost {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid rgba(236,225,200,0.5);
+  color: var(--beige);
+  padding: 0.75rem 1.4rem;
+  border-radius: 2px;
+}
+.btn-ghost:hover { border-color: var(--beige); background: rgba(236,225,200,0.08); }
+
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+.section { padding: 4.5rem 0; }
+.section-head { margin-bottom: 2.4rem; }
+.section-head h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: 0.3rem 0 0;
+}
+
+/* =========================================================
+   CATEGORY CARDS
+   ========================================================= */
+.cat-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  isolation: isolate;
+}
+.cat-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  z-index: -2;
+}
+.cat-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(22,20,15,0) 35%, rgba(22,20,15,0.88) 100%);
+  z-index: -1;
+}
+.cat-card:hover img { transform: scale(1.07); }
+.cat-card .cat-label {
+  position: relative;
+  z-index: 1;
+  padding: 1.3rem 1.4rem;
+  color: var(--beige);
+  width: 100%;
+}
+.cat-card .cat-label .eyebrow { color: var(--tan); }
+.cat-card .cat-label h3 { font-size: 1.5rem; margin: 0.2rem 0 0; }
+
+/* =========================================================
+   PRODUCT CARDS + SIGNATURE PRICE TAG
+   ========================================================= */
+.product-card {
+  background: var(--cream);
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  height: 100%;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.product-card:hover { box-shadow: 0 14px 30px rgba(22,20,15,0.13); transform: translateY(-3px); }
+.product-thumb {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: var(--beige-deep);
+}
+.product-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.badge-flag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--beige);
+  padding: 0.28rem 0.6rem;
+  border-radius: 2px;
+}
+.wish-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(248,243,231,0.9);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+.wish-btn.active { background: var(--ink); color: var(--tan); }
+.wish-btn:hover { transform: scale(1.08); }
+
+.product-body { padding: 1rem 1.1rem 1.2rem; }
+.product-body .p-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+.product-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--tan-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* The signature element: a rotated, hole-punched secondhand price tag */
+.price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--cream);
+  border: 1.4px dashed var(--tan-dark);
+  padding: 0.32rem 0.7rem 0.32rem 1.5rem;
+  border-radius: 3px;
+  position: relative;
+  margin-top: 0.6rem;
+  transform: rotate(-1.4deg);
+}
+.price-tag::before {
+  content: "";
+  position: absolute;
+  left: 7px; top: 50%;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--beige);
+  border: 1.4px solid var(--tan-dark);
+  transform: translateY(-50%);
+}
+.price-tag .now {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+.price-tag .was {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--tan-dark);
+  text-decoration: line-through;
+}
+.product-actions { margin-top: 0.85rem; display: flex; gap: 0.5rem; }
+.btn-add {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  background: var(--ink);
+  color: var(--beige);
+  border: none;
+  border-radius: 3px;
+  padding: 0.55rem 0.6rem;
+  transition: background 0.15s ease;
+}
+.btn-add:hover { background: var(--tan-dark); }
+
+/* Filter pills */
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.15s ease;
+}
+.filter-pill.active, .filter-pill:hover { background: var(--ink); color: var(--beige); }
+
+/* =========================================================
+   WHY-THRIFT STRIP
+   ========================================================= */
+.why-strip { background: var(--ink); color: var(--beige); }
+.why-item .num {
+  font-family: var(--font-mono);
+  color: var(--tan);
+  font-size: 0.78rem;
+}
+.why-item h4 { font-size: 1.15rem; margin: 0.5rem 0 0.4rem; }
+.why-item p { color: rgba(236,225,200,0.75); font-size: 0.92rem; margin: 0; }
+
+/* =========================================================
+   REVIEWS — receipt-paper styling
+   ========================================================= */
+.review-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1.6rem 1.5rem;
+  position: relative;
+  height: 100%;
+}
+.review-card::before {
+  content: "";
+  position: absolute;
+  top: -6px; left: 16px; right: 16px;
+  height: 12px;
+  background:
+    radial-gradient(circle at 6px 6px, transparent 5px, var(--cream) 5.5px) 0 0 / 16px 12px repeat-x;
+}
+.stars { color: var(--tan); letter-spacing: 0.1em; font-size: 0.9rem; }
+.review-card p.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0.7rem 0 1rem;
+}
+.review-name { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.review-product { color: var(--tan-dark); font-size: 0.76rem; }
+
+/* Review form */
+.review-form-card {
+  background: var(--beige-deep);
+  border-radius: 6px;
+  padding: 1.8rem;
+}
+.star-pick { display: flex; gap: 0.3rem; font-size: 1.4rem; cursor: pointer; }
+.star-pick i { color: var(--line); }
+.star-pick i.filled { color: var(--tan); }
+
+/* =========================================================
+   M-PESA STRIP
+   ========================================================= */
+.mpesa-strip {
+  background: var(--beige-deep);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.mpesa-logo-chip {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #1a7a3c;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   OFFCANVAS (Cart / Wishlist)
+   ========================================================= */
+.offcanvas {
+  background: var(--cream);
+}
+.offcanvas-header { border-bottom: 1px solid var(--line); }
+.offcanvas-title { font-family: var(--font-display); }
+.cart-line { display: flex; gap: 0.8rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line); }
+.cart-line img { width: 60px; height: 70px; object-fit: cover; border-radius: 4px; }
+.cart-line .name { font-family: var(--font-display); font-size: 0.95rem; margin: 0; }
+.cart-line .meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--tan-dark); }
+.qty-btn {
+  width: 24px; height: 24px;
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.remove-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--tan-dark);
+  text-decoration: underline;
+  background: none; border: none; padding: 0;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer.tf-footer {
+  background: var(--ink);
+  color: rgba(236,225,200,0.75);
+  padding: 3rem 0 1.5rem;
+}
+.tf-footer h5 { color: var(--beige); font-family: var(--font-display); }
+.tf-footer a { color: rgba(236,225,200,0.75); text-decoration: none; font-size: 0.9rem; }
+.tf-footer a:hover { color: var(--tan); }
+.tf-footer .brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--beige); }
+.tf-footer .brand span { color: var(--tan); }
+.footer-bottom {
+  border-top: 1px solid rgba(236,225,200,0.12);
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+@media (max-width: 767.98px) {
+  .hero { min-height: 78vh; }
+  .mpesa-strip { flex-direction: column; text-align: center; }
+}

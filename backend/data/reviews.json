@@ -1,0 +1,30 @@
+[
+  {
+    "id": "r01",
+    "name": "Achieng W.",
+    "rating": 5,
+    "text": "Found a Plaid wool overcoat for 2,400 that would've cost me 9k brand new. Quality is honestly better than most new stuff I've bought. Thrifter is my go-to now.",
+    "product": "Plaid Wool Overcoat"
+  },
+  {
+    "id": "r02",
+    "name": "Brian K.",
+    "rating": 5,
+    "text": "The M-Pesa checkout was so smooth, paid and got a confirmation in seconds. Jacket arrived exactly as pictured.",
+    "product": "Vintage Denim Jacket"
+  },
+  {
+    "id": "r03",
+    "name": "Naomi M.",
+    "rating": 4,
+    "text": "Love the wishlist feature, I save pieces and wait for restocks. The wrap dress I got was barely worn, smelled fresh too.",
+    "product": "Floral Wrap Midi Dress"
+  },
+  {
+    "id": "r04",
+    "name": "Kevin O.",
+    "rating": 5,
+    "text": "Got my daughter the denim overalls for a fraction of retail. She's already outgrowing clothes every few months so this is a lifesaver.",
+    "product": "Denim Overalls Set"
+  }
+]

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thrifter — Secondhand. First Choice.</title>
+<meta name="description" content="Thrifter — your one-stop shop for expensive fashion taste on affordable prices. Men's, women's & kids' thrift fashion in Kenya with M-Pesa checkout.">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg tf-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">Thrift<span>er</span></a>
+    <button class="navbar-toggler text-bg-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list text-beige" style="color:#ece1c8; font-size:1.6rem;"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <!--listing for the narbar menu-->
+      <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#shop" onclick="setFilter('all')">All</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop" onclick="setFilter('men')">Men</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop" onclick="setFilter('women')">Women</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop" onclick="setFilter('kids')">Children</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <div class="position-relative flex-grow-1 me-2 d-lg-block">
+          <input type="search" id="searchInput" class="form-control form-control-sm" placeholder="Search pieces…" style="min-width:160px;">
+        </div>
+
+        <!--buttons for the cart-->
+        <button class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" aria-label="Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="icon-badge" id="wishlistCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartIconBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="icon-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="hero-stamp">Secondhand · First Choice</span>
+        <h1>Expensive taste,<br>thrifted prices.</h1>
+        <p class="slogan">Your one-stop shop for expensive fashion taste on affordable prices.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#shop" class="btn-tag">Shop the rack</a>
+          <a href="#how-mpesa" class="btn-ghost">Pay with M-Pesa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section pt-5">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Shop by department</span>
+      <h2>Three racks, one good deal each</h2>
+    </div>
+
+    <!--Department section cards-->
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="cat-card" onclick="setFilter('men'); document.getElementById('shop').scrollIntoView({behavior:'smooth'});">
+          <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=700&auto=format&fit=crop" alt="Men's thrift fashion">
+          <div class="cat-label">
+            <span class="eyebrow">Department 01</span>
+            <h3>Men's</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cat-card" onclick="setFilter('women'); document.getElementById('shop').scrollIntoView({behavior:'smooth'});">
+          <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=700&auto=format&fit=crop" alt="Women's thrift fashion">
+          <div class="cat-label">
+            <span class="eyebrow">Department 02</span>
+            <h3>Women's</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cat-card" onclick="setFilter('kids'); document.getElementById('shop').scrollIntoView({behavior:'smooth'});">
+          <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=700&auto=format&fit=crop" alt="Children's thrift fashion">
+          <div class="cat-label">
+            <span class="eyebrow">Department 03</span>
+            <h3>Children's</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP / PRODUCTS ============ -->
+<section class="section" id="shop">
+  <div class="container">
+    <div class="section-head d-flex flex-wrap justify-content-between align-items-end">
+      <div>
+        <span class="eyebrow">The rack, today</span>
+        <h2>Fresh thrifted finds</h2>
+      </div>
+    </div>
+
+    <!--Filter buttons-->
+    <div class="mb-4">
+      <button class="filter-pill active" data-cat="all">All</button>
+      <button class="filter-pill" data-cat="men">Men</button>
+      <button class="filter-pill" data-cat="women">Women</button>
+      <button class="filter-pill" data-cat="kids">Children</button>
+    </div>
+
+    <div class="row g-3" id="productGrid">
+      <!-- product cards  -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY THRIFT ============ -->
+<section class="why-strip section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-3 why-item">
+        <div class="num">01</div>
+        <h4>Real fabric, real value</h4>
+        <p>Every piece is hand-checked for quality before it earns a price tag.</p>
+      </div>
+      <div class="col-md-3 why-item">
+        <div class="num">02</div>
+        <h4>Up to 80% off retail</h4>
+        <p>Designer-leaning pieces priced like they belong in a thrift bin — because they do.</p>
+      </div>
+      <div class="col-md-3 why-item">
+        <div class="num">03</div>
+        <h4>One closet, less waste</h4>
+        <p>Buying secondhand keeps good clothing in circulation, not landfills.</p>
+      </div>
+      <div class="col-md-3 why-item">
+        <div class="num">04</div>
+        <h4>Pay how Kenya pays</h4>
+        <p>M-Pesa checkout, no card, no fuss — confirm on your phone in seconds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ M-PESA STRIP ============ -->
+<section class="section" id="how-mpesa">
+  <div class="container">
+    <div class="mpesa-strip">
+      <div class="mpesa-logo-chip">M-PESA</div>
+      <div class="flex-grow-1">
+        <h3 class="mb-1">Checkout in one tap</h3>
+        <p class="mb-0">Add items to your bag, enter your M-Pesa number at checkout, and approve the STK push on your phone. Your order ships once payment confirms.</p>
+      </div>
+      <button class="btn-tag" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">View bag</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews" style="background:var(--beige-deep);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Word on the rack</span>
+      <h2>What thrift-lovers are saying</h2>
+    </div>
+    <div class="row g-3 mb-5" id="reviewsRow">
+      <!-- reviews injected by app.js -->
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="review-form-card">
+          <h4 class="mb-3">Leave a review</h4>
+          <div id="reviewSuccess" class="alert alert-success d-none">Thanks! Your review has been posted.</div>
+          <form id="reviewForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="eyebrow d-block mb-1">Your name</label>
+                <input type="text" id="reviewName" class="form-control" placeholder="e.g. Wanjiru K." required>
+              </div>
+              <div class="col-md-6">
+                <label class="eyebrow d-block mb-1">Item purchased (optional)</label>
+                <input type="text" id="reviewProduct" class="form-control" placeholder="e.g. Vintage Denim Jacket">
+              </div>
+              <div class="col-12">
+                <label class="eyebrow d-block mb-1">Rating</label>
+                <div class="star-pick" id="starPicker">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="eyebrow d-block mb-1">Your review</label>
+                <textarea id="reviewText" class="form-control" rows="3" placeholder="Tell us about the fit, quality, delivery…" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-tag">Post review</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="tf-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="brand mb-2">Thrift<span>er</span></div>
+        <p>Your one-stop shop for expensive fashion taste on affordable prices. Based in Nairobi, shipping countrywide.</p>
+      </div>
+      <div class="col-md-2">
+        <h5>Shop</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#shop" onclick="setFilter('men')">Men's</a></li>
+          <li><a href="#shop" onclick="setFilter('women')">Women's</a></li>
+          <li><a href="#shop" onclick="setFilter('kids')">Children's</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Help</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#how-mpesa">M-Pesa Payments</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#">Returns Policy</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Stay in the loop</h5>
+        <p>New drops, restocks, and thrift tips, occasionally.</p>
+        <div class="d-flex gap-2">
+          <input type="email" class="form-control form-control-sm" placeholder="you@email.com">
+          <button class="btn-tag" style="padding:0.45rem 1rem;">Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between">
+      <span>© 2026 Thrifter. All pieces one-of-a-kind.</span>
+      <span>Nairobi, Kenya</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART OFFCANVAS ============ -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-bag me-2"></i>Your bag</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div id="cartBody" class="flex-grow-1"></div>
+
+    <div class="border-top pt-3 mt-3">
+      <div class="d-flex justify-content-between mb-3">
+        <span class="eyebrow">Total</span>
+        <span class="p-name" id="cartTotal">KSh 0</span>
+      </div>
+      <form id="mpesaForm">
+        <label class="eyebrow d-block mb-1">M-Pesa phone number</label>
+        <input type="tel" id="mpesaPhone" class="form-control mb-2" placeholder="07XX XXX XXX" required>
+        <button type="submit" class="btn-add w-100" style="background:var(--tan); color:var(--ink); font-weight:700;">
+          <i class="bi bi-phone-vibrate me-1"></i>Pay <span id="mpesaAmount">KSh 0</span> with M-Pesa
+        </button>
+      </form>
+      <div id="mpesaStatus" class="d-none"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WISHLIST OFFCANVAS ============ -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="wishlistOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-heart me-2"></i>Your wishlist</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="wishlistBody"></div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
